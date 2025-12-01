@@ -1,42 +1,164 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ------------------------------
+   Global Styling
+--------------------------------*/
+:root {
+  --react-blue: #61dafb;
+  --react-dark: #20232a;
+  --react-light: #f5f7fa;
+  --react-gray: #eceff4;
+  --text-dark: #1e1e1e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--react-light);
+  color: var(--text-dark);
+}
+
+/* ------------------------------
+   Header + Footer
+--------------------------------*/
+.header,
+.footer {
+  background: var(--react-dark);
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.header p {
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* ------------------------------
+   App Container
+--------------------------------*/
+.quiz-app {
+  max-width: 900px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px 40px;
+  border-radius: 14px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Smooth card fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------
+   Question Section
+--------------------------------*/
+.question-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--react-dark);
+}
+
+.question-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* ------------------------------
+   Options
+--------------------------------*/
+.options-section {
+  margin-top: 15px;
+}
+
+.options-section label {
+  display: flex;
+  align-items: center;
+  background: var(--react-gray);
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.options-section label:hover {
+  background: #dce3ec;
+  transform: scale(1.01);
+}
+
+.options-section input[type="radio"] {
+  margin-right: 12px;
+  transform: scale(1.2);
+}
+
+/* Highlight selected option */
+input[type="radio"]:checked + span,
+label:has(input:checked) {
+  border-color: var(--react-blue);
+  background: #dff7ff;
+}
+
+/* ------------------------------
+   Buttons
+--------------------------------*/
+button {
+  background: var(--react-blue);
+  color: #000;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  margin-top: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: scale(1.05);
+  background: #52c6e3;
+}
+
+button:disabled {
+  background: #b3b3b3;
+  cursor: not-allowed;
+}
+
+/* ------------------------------
+   Score Page
+--------------------------------*/
+.score-section {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.score-section h2 {
+  font-size: 2rem;
+  color: var(--react-dark);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.score-section button {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ------------------------------
+   Footer
+--------------------------------*/
+.footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
