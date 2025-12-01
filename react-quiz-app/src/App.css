@@ -18,6 +18,27 @@ body {
 }
 
 /* ------------------------------
+   Progress Bar
+--------------------------------*/
+.progress-container {
+  width: 100%;
+  background: #dfe6eb;
+  height: 12px;
+  border-radius: 8px;
+  margin: 20px auto 25px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--react-blue);
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+}
+
+
+/* ------------------------------
    Header + Footer
 --------------------------------*/
 .header,

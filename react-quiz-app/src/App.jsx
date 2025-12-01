@@ -141,7 +141,15 @@ const App = () => {
  
   return ( 
     <div className="quiz-app">
-      <Header />      
+      <Header />
+
+      <div className="progress-container">
+        <div 
+          className="progress-bar" 
+          style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
+        ></div>
+      </div>
+      
       {showScore ? ( 
         <Score score={score} totalQuestions={quizQuestions.length} 
 handleRestartQuiz={handleRestartQuiz} /> 
